@@ -34,7 +34,8 @@ export default {
     },
     methods:{
         getCurrencies(){
-           axios.get('https://localhost:9991/api/currencies')
+            //console.log('getCurrencies');
+            axios.get('https://localhost:9991/api/currencies')
            .then(response => {
                if(response.status == 200){
                     this.currencies = response.data;
@@ -48,6 +49,11 @@ export default {
                alert(error);
             }); 
         }
+    },
+
+    created(){
+        //console.log('created');
+        this.getCurrencies();
     }
 }
 </script>
