@@ -1,17 +1,21 @@
 <template>
 <div id="Currencies">
-    <button @click="getCurrencies">Начать</button>
-    <table>
+    <button @click="getCurrencies">Обновить</button>
+    <table v-if="this.currencies.length != 0">
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Code</th>
                 <th>Name</th>
+                <th>BaseRate</th>
             </tr>
         </thead>
         <tbody>
-            <tr v-for="cur in currencies" :key="cur.Id">
-                <td>{{cur.Id}}</td>
-                <td>{{cur.Name}}</td>
+            <tr v-for="cur in currencies" :key="cur.ID">
+                <td>{{cur.ID}}</td>
+                <td>{{cur.CC}}</td>
+                <td>{{cur.NM}}</td>
+                <td>{{cur.BR}}</td>
             </tr>
         </tbody>
     </table>
@@ -30,10 +34,10 @@ export default {
     },
     methods:{
         getCurrencies: function(){
-           this.$http.get('https://localhost:5001/api/currencies').then(response => {
-               console.log(response);
-               console.log(response.data);
-               this.currencies = response.data;
+           this.$http.get('https://localhost:9991/api/currencies').then(response => {
+               //console.log(response);
+               //console.log(response.data);
+               this.currencies = response.body;
            }); 
         }
     }
