@@ -32,7 +32,7 @@ export default {
         };
     },
     methods:{
-        getCurrencies: function(){
+        getCurrencies(){
            axios.get('https://localhost:9991/api/currencies')
            .then(response => {
                if(response.status == 200){
@@ -50,3 +50,9 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+table {
+    margin: auto;
+}
+</style>
