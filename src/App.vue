@@ -9,7 +9,6 @@
 import Currencies from './components/Currencies'
 
 export default {
-  name: 'app',
   components: {
     Currencies
   },

@@ -26,7 +26,6 @@
 import axios from 'axios'
 
 export default {
-    name: 'Currencies',
     props:{
         url: String
     },
