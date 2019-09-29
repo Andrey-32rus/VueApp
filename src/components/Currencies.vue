@@ -23,6 +23,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     name: 'Currencies',
     data(){
@@ -32,11 +33,19 @@ export default {
     },
     methods:{
         getCurrencies: function(){
-           this.$http.get('https://localhost:9991/api/currencies').then(response => {
-               //console.log(response);
-               //console.log(response.data);
-               this.currencies = response.body;
-           }); 
+           axios.get('https://localhost:9991/api/currencies')
+           .then(response => {
+               if(response.status == 200){
+                    this.currencies = response.data;
+               }
+               else{
+                   alert(response.status);
+               }
+               
+           })
+           .catch(error => {
+               alert(error);
+            }); 
         }
     }
 }
