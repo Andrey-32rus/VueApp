@@ -27,6 +27,9 @@ import axios from 'axios'
 
 export default {
     name: 'Currencies',
+    props:{
+        url: String
+    },
     data(){
         return {
             currencies:[]
@@ -35,7 +38,7 @@ export default {
     methods:{
         getCurrencies(){
             //console.log('getCurrencies');
-            axios.get('https://localhost:9991/api/currencies')
+            axios.get(this.url)
            .then(response => {
                if(response.status == 200){
                     this.currencies = response.data;

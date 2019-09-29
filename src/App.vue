@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"><br/> -->
-    <Currencies/>
+    <Currencies url="https://localhost:9991/api/currencies"/>
   </div>
 </template>
 
