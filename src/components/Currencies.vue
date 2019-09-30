@@ -40,8 +40,10 @@ export default {
     },
     methods:{
         getCurrencies(){
-            this.isLoading = true;
-            //console.log('getCurrencies');
+            if(this.currencies.length == 0){
+                this.isLoading = true;
+            }
+
             axios.get(this.url)
             .then(response => {
                 if(response.status == 200){
