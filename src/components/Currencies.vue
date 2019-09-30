@@ -13,7 +13,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="cur in currencies" :key="cur.ID">
+                <tr v-for="(cur, index) in currencies" :key="cur.ID" @click="rowClick(index)">
                     <td>{{cur.ID}}</td>
                     <td>{{cur.CC}}</td>
                     <td>{{cur.NM}}</td>
@@ -59,6 +59,10 @@ export default {
             .finally(() => {
                 this.isLoading = false;
             }); 
+        },
+
+        rowClick(index){
+           this.currencies.splice(index, 1);
         }
     },
 
@@ -72,6 +76,7 @@ export default {
 <style scoped>
 table {
     margin: auto;
+    margin-top: 1.25rem;
 }
 
 .loading {
@@ -79,5 +84,13 @@ table {
     background-image: url('../assets/loading.gif');
     background-repeat: no-repeat;
     background-size: 100%;
+}
+
+tbody tr {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
 }
 </style>
