@@ -39,7 +39,10 @@ export default {
         };
     },
     methods:{
+        
         getCurrencies(){
+            var startTime = Date.now();
+
             if(this.currencies.length == 0){
                 this.isLoading = true;
             }
@@ -47,7 +50,9 @@ export default {
             axios.get(this.url)
             .then(response => {
                 if(response.status == 200){
+                    //console.log(response);
                     this.currencies = response.data;
+                    this.$emit('req-time', Date.now() - startTime);
                 }
                 else{
                     alert(response.status);

@@ -1,7 +1,8 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"><br/> -->
-    <Currencies url="https://localhost:9991/api/currencies"/>
+    <Currencies url="https://localhost:9991/api/currencies" @req-time="reqTime"/>
+    <p>Время выполнения запроса: {{this.requestMilliseconds}}ms</p>
   </div>
 </template>
 
@@ -13,8 +14,17 @@ export default {
     Currencies
   },
 
+  data(){
+    return{
+      requestMilliseconds: Number,
+    };
+  },
+
   methods:{
-    
+    reqTime(milliseconds){
+      //console.log(milliseconds);
+      this.requestMilliseconds = milliseconds;
+    }
   }
 }
 </script>
@@ -35,6 +45,10 @@ export default {
 
 .h100{
     height: 100%;
+}
+
+p{
+  font-weight: bold;
 }
 
 </style>
