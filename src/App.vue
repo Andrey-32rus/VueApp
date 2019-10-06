@@ -2,7 +2,7 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"><br/> -->
     <Currencies url="https://localhost:9991/api/currencies" @req-time="reqTime"/>
-    <p>Время выполнения запроса: {{this.requestMilliseconds}}ms</p>
+    <p v-if="requestMilliseconds !== -1">Время выполнения запроса: {{this.requestMilliseconds}}ms</p>
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 
   data(){
     return{
-      requestMilliseconds: Number,
+      requestMilliseconds: -1,
     };
   },
 
