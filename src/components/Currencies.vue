@@ -1,6 +1,8 @@
 <template>
 <div id="Currencies">
-    <div v-if="isLoading === true" class="w100 h100 loading"></div>
+    <div v-if="isLoading === true">
+        <img src="../assets/loading.gif" alt="Loading..."/>
+    </div>
     <template v-else>
         <button @click="getCurrencies">Обновить</button>
         <table v-if="this.currencies.length != 0">
@@ -82,13 +84,6 @@ export default {
 table {
     margin: auto;
     margin-top: 1.25rem;
-}
-
-.loading {
-    position: fixed;
-    background-image: url('../assets/loading.gif');
-    background-repeat: no-repeat;
-    background-size: 100%;
 }
 
 tbody tr {
