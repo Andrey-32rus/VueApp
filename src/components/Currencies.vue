@@ -1,6 +1,6 @@
 <template>
 <div id="Currencies">
-    <div v-if="isLoading === true" class="img-loading">
+    <div v-if="isLoading === true" class="img-container">
         <img src="../assets/loading.gif" class="img" alt="Loading..."/>
     </div>
     <template v-else>
@@ -96,7 +96,7 @@ button {
 
 .img{
     width: 100%;
-    height: auto;
+    height: 93vh;
 }
 
 .img-container{
