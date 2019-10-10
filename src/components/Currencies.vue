@@ -1,7 +1,7 @@
 <template>
 <div id="Currencies">
-    <div v-if="isLoading === true">
-        <img src="../assets/loading.gif" alt="Loading..."/>
+    <div v-if="isLoading === true" class="img-loading">
+        <img src="../assets/loading.gif" class="img" alt="Loading..."/>
     </div>
     <template v-else>
         <button @click="getCurrencies">Обновить</button>
@@ -93,4 +93,15 @@ tbody tr {
 button {
     cursor: pointer;
 }
+
+.img{
+    width: 100%;
+    height: auto;
+}
+
+.img-container{
+    width: 100%;
+    margin: 0 auto;
+}
+
 </style>
