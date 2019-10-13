@@ -64,7 +64,7 @@ export default {
                alert(error);
             })
             .finally(() => {
-                //this.isLoading = false;
+                this.isLoading = false;
             }); 
         },
 
@@ -97,12 +97,14 @@ button {
 .img{
     width: 100%;
     max-height: 93vh;
+    margin: auto;
 }
 
 .img-container{
     width: 100%;
     margin: 0 auto;
     height: 93vh;
+    display: flex;
 }
 
 </style>
