@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"><br/> -->
-    <Currencies url="https://localhost:9991/api/currencies" @req-time="reqTime"/>
+    <Currencies url="https://192.168.1.101:9991/api/currencies" @req-time="reqTime"/>
     <p v-if="requestMilliseconds !== -1">Время выполнения запроса: {{this.requestMilliseconds}}ms</p>
   </div>
 </template>
