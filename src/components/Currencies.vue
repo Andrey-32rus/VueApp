@@ -10,7 +10,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Code</th>
-                    <th>Name</th>
+                    <th class="no-mobile">Name</th>
                     <th>BaseRate</th>
                 </tr>
             </thead>
@@ -18,7 +18,7 @@
                 <tr v-for="(cur, index) in currencies" :key="cur.ID" @click="rowClick(index)">
                     <td>{{cur.ID}}</td>
                     <td>{{cur.CC}}</td>
-                    <td>{{cur.NM}}</td>
+                    <td class="no-mobile">{{cur.NM}}</td>
                     <td>{{cur.BR}}</td>
                 </tr>
             </tbody>
@@ -106,5 +106,17 @@ button {
     height: 93vh;
     display: flex;
 }
+
+@media screen and (min-width:480px) and (max-width:800px) {
+  /* Target landscape smartphones, portrait tablets, narrow desktops*/
+}
+
+@media screen and (max-width:479px) {
+    /* Target portrait smartphones */
+    .no-mobile{
+        display: none
+    }
+}
+
 
 </style>
