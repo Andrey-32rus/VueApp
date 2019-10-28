@@ -29,6 +29,8 @@ export default {
 #Aside{
     width: 15vw;
     border: 1px solid black;
+    height: 100%;
+    position: fixed;
 }
 
 ul{

@@ -40,19 +40,34 @@ export default {
 
 <style scoped>
 .main{
+  padding: 5px;
   width: 85vw;
+  margin-left: 15vw;
 }
 
 @media screen and (max-width:479px) {
     /* Target portrait smartphones */
     .main{
       width: 75vw;
+      margin-left: 25vw;
     }
 }
 </style>
 
 <style>
+
+html{
+  height: 100%;
+}
+
+body{
+  height: 100%;
+  margin: 0;
+}
+
 #app {
+
+  height: 100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

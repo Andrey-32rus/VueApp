@@ -52,8 +52,16 @@ export default {
             axios.get(this.url)
             .then(response => {
                 if(response.status == 200){
-                    //console.log(response);
-                    this.currencies = response.data;
+                    //console.log(this.currencies.length);
+                    //console.log(this.currencies);
+                    if(this.currencies.length != 0){
+                        for(let i = 0; i < response.data.length; i++){
+                            this.currencies.push(response.data[i]);
+                        }
+                    }else{
+                        this.currencies = response.data;
+                    }
+                    
                     this.$emit('req-time', Date.now() - startTime);
                 }
                 else{
