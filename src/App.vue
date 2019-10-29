@@ -3,7 +3,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"><br/> -->
     <Aside @menu-choice="menuChoice"/>
     <div class="main">
-      <Currencies v-if="mainElementKey === 'currencies'" url="http://192.168.1.101:9990/api/currencies" @req-time="reqTime"/>
+      <Currencies v-if="mainElementKey === 'currencies'" url="/service/api/currencies" @req-time="reqTime"/>
       <p v-if="requestMilliseconds !== -1">Время выполнения запроса: {{this.requestMilliseconds}}ms</p>
     </div>
   </div>
